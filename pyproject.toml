@@ -18,6 +18,9 @@ dependencies = [
     "gbgpu",
     "pycbc",
     "lisaglitch",
+    "pyEFPE @ git+https://github.com/gmorras/pyEFPE.git",
+    "lisagap @ git+https://github.com/ollieburke/lisagap.git",
+    "phenomxpy @ git+https://github.com/imrphenom-dev/phenomxpy.git",
 ]
 
 [build-system]
