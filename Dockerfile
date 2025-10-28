@@ -20,7 +20,7 @@ COPY README.md ./
 RUN uv --version
 
 # Make sure pip, setuptools and wheel are current and install Cython into the global environment
-RUN uv pip install --upgrade pip setuptools wheel \
+RUN uv pip install --system --upgrade pip setuptools wheel \
  && uv pip install --system cython
 
 
