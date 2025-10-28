@@ -14,5 +14,11 @@ COPY README.md ./
 # Verify uv is installed
 RUN uv --version
 
+# Install dependencies from pyproject.toml  
+# Set GIT_SSL_NO_VERIFY as a workaround for SSL certificate verification issues
+ENV GIT_SSL_NO_VERIFY=1
+RUN uv pip install --system .
+ENV GIT_SSL_NO_VERIFY=
+
 # Set the default command to show Python and uv versions
 CMD ["sh", "-c", "python --version && uv --version"]
