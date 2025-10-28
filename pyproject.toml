@@ -18,6 +18,7 @@ dependencies = [
     "gbgpu",
     "pycbc",
     "lisaglitch",
+    "pyEFPE @ git+https://github.com/gmorras/pyEFPE.git"
 ]
 
 [build-system]
