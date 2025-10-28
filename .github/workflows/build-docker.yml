@@ -24,6 +24,12 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      - name: Aggressively free up unused disk space
+        run: |
+          # Remove large, common, unneeded packages on Linux runners
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android 
+          sudo rm -rf /opt/ghc /usr/share/swift /usr/local/.ghcup
+
       - name: Clean up unused Docker resources to free space
         run: docker system prune -a -f
       
