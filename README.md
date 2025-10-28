@@ -6,7 +6,7 @@ Github CI to build a shared code environment for UK LISA work and documentation 
 
 This repository includes:
 
-- **Docker Image**: A Python 3.11 Docker image with `uv` package manager pre-installed
+- **Docker Image**: A Python 3.12 Docker image with `uv` package manager pre-installed
 - **GitHub CI Workflow**: Automated Docker image build on push/PR to main and develop branches
 - **Python Project Configuration**: Basic `pyproject.toml` setup for Python projects
 
