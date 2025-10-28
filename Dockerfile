@@ -19,6 +19,11 @@ COPY README.md ./
 # Verify uv is installed
 RUN uv --version
 
+# Make sure pip, setuptools and wheel are current and install Cython into the global environment
+RUN uv pip install --upgrade pip setuptools wheel \
+ && uv pip install --system cython
+
+
 # Install dependencies from pyproject.toml  
 # Set GIT_SSL_NO_VERIFY as a workaround for SSL certificate verification issues
 ENV GIT_SSL_NO_VERIFY=1
