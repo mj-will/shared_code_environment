@@ -19,16 +19,10 @@ COPY README.md ./
 # Verify uv is installed
 RUN uv --version
 
-# Make sure pip, setuptools and wheel are current and install Cython into the global environment
-RUN uv pip install --system --upgrade pip setuptools wheel \
- && uv pip install --system cython
-
-
 # Install dependencies from pyproject.toml  
 # Set GIT_SSL_NO_VERIFY as a workaround for SSL certificate verification issues
 ENV GIT_SSL_NO_VERIFY=1
 RUN uv pip install --system .
-RUN uv pip install --system --no-build-isolation git+https://github.com/gmorras/pyEFPE.git
 ENV GIT_SSL_NO_VERIFY=
 
 # Set the default command to show Python and uv versions
