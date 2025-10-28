@@ -1,0 +1,11 @@
+[project]
+name = "shared-code-environment"
+version = "0.1.0"
+description = "Shared code environment for UK LISA work"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
