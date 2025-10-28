@@ -30,8 +30,8 @@ jobs:
           tags: shared-code-environment:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          load: true
       
       - name: Test Docker image
         run: |
-          docker build -t shared-code-environment:test .
-          docker run --rm shared-code-environment:test
+          docker run --rm shared-code-environment:latest
