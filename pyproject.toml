@@ -11,6 +11,13 @@ dependencies = [
     "numpy",
     "scipy",
     "bbhx",
+    "fastemriwaveforms",
+    "eryn",
+    "lisaconstants",
+    "fastlisaresponse",
+    "gbgpu",
+    "pycbc",
+    "lisaglitch",
 ]
 
 [build-system]
