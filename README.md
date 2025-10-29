@@ -7,8 +7,29 @@ Github CI to build a shared code environment for UK LISA work and documentation 
 This repository includes:
 
 - **Docker Image**: A Python 3.12 Docker image with `uv` package manager pre-installed
-- **GitHub CI Workflow**: Automated Docker image build on push/PR to main and develop branches
+- **GitHub CI Workflow**: Automated Docker image build and push to GitHub Container Registry (GHCR) on push/PR to main and develop branches
 - **Python Project Configuration**: Basic `pyproject.toml` setup for Python projects
+
+## Using the Pre-built Docker Image
+
+The Docker image is automatically built and pushed to GitHub Container Registry. You can pull and use it directly:
+
+```bash
+# Pull the latest image from main branch
+docker pull ghcr.io/uk-lisa-gs/shared_code_environment:main
+
+# Run the image
+docker run --rm ghcr.io/uk-lisa-gs/shared_code_environment:main
+
+# Use it as a base for your own work
+docker run -it --rm -v $(pwd):/workspace ghcr.io/uk-lisa-gs/shared_code_environment:main bash
+```
+
+### Available Tags
+
+- `main` - Latest build from the main branch
+- `develop` - Latest build from the develop branch
+- `<branch>-<sha>` - Specific commit builds (e.g., `main-abc1234`)
 
 ## Building the Docker Image
 
