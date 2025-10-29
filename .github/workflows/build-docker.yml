@@ -69,5 +69,7 @@ jobs:
             docker pull ghcr.io/${{ github.repository }}:${{ github.ref_name }}
             docker run --rm ghcr.io/${{ github.repository }}:${{ github.ref_name }}
           else
-            docker run --rm ${{ steps.meta.outputs.tags }}
+            # For PRs, use the first tag from metadata output
+            TAG=$(echo "${{ steps.meta.outputs.tags }}" | head -n 1)
+            docker run --rm "$TAG"
           fi
