@@ -18,8 +18,10 @@ dependencies = [
     "gbgpu",
     "pycbc",
     "lisaglitch",
+    # NOTE: pyEFPE does not properly declare it needs cython. This can cause issues it's therefore not installed here, but is in the Dockerfile separately
+    "pyEFPE @ git+https://github.com/spxiwh/pyEFPE.git",
 ]
 
 [build-system]
-requires = ["setuptools>=45", "wheel"]
+requires = ["setuptools>=61.0", "wheel", "cython"]
 build-backend = "setuptools.build_meta"
