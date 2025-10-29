@@ -20,6 +20,9 @@ dependencies = [
     "lisaglitch",
     # NOTE: pyEFPE does not properly declare it needs cython. This can cause issues it's therefore not installed here, but is in the Dockerfile separately
     "pyEFPE @ git+https://github.com/spxiwh/pyEFPE.git",
+    "jupyter",
+    "nbconvert",
+    "matplotlib",
 ]
 
 [build-system]
